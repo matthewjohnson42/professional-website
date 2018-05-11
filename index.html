@@ -6,11 +6,11 @@
   <title>Matthew Johnson, Professional Webpage</title>
 <style>
   body {
-    background-color: grey;
+    background-color: #4b4b4b;
   }
   div.mj-header {
     position: relative;
-    background-color: #4b4b4b;
+    background-color: #dcdcdc;
     padding: 20px;
     border: 5px solid #000000;
     border-radius: 10px;
@@ -29,20 +29,57 @@
     font-size: 15px;
     text-align: center;
   }
-  div.mj-main {
+  div.mj-panel-left-align {
     position: relative;
-    background-color: #646464;
+    background-color: #dcdcdc;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-family: "Arial", serif;
+    font-size: 15px;
+    text-align: left;
+	line-height:1.5;
+  }
+  div.mj-panel-center-align {
+    position: relative;
+    background-color: #dcdcdc;
     padding: 10px;
     border: 1px solid #000000;
     border-radius: 10px;
     font-family: "Arial", serif;
     font-size: 15px;
     text-align: center;
+	line-height:1.5;
+  }
+  div.mj-half {
+    position: relative;
+    width: 49%;
+    display: inline-grid;
+  }
+  div.mj-resume {
+	text-align: left;
+	max-width: 1000px;
+    margin: auto;
+	word-break: break-word;
+  }
+  div.mj-resume-desc{
+	padding:10px;
+  }
+  div.mj-resume-detail{
+    padding:10px;
+	margin-left:30px;
   }
   button {
     background-color: #ffffff;
     padding: 5px;
     border-radius: 5px;
+  }
+  p {
+	margin-left:30px;
+	margin-right:30px;
+  }
+  h3 {
+	text-align:center;
   }
 </style>
 </head>
@@ -55,7 +92,7 @@
 </div>
 <br>
 <div class="mj-bar">
-  <button type="button">Introduction</button>
+  <button type="button" onclick="">Introduction</button>
   <button type="button">Professional History</button>
   <button type="button">Projects</button>
   <button type="button">Achievements</button>
@@ -63,49 +100,189 @@
   <button type="button">Contact Me</button>
 </div>
 <br>
-<div class="mj-main">
-  <p>Hello! Welcome to my website.</p>
-  <p>I have created this website for the convenience of yourself, the individual
-  who has chosen to take the time to investigate the contents of my eponymous website. My hope is that any questions you might
-  have about myself are given greater insight in the course of your visit to this site.</p>
-  <p>I graduated cum laude in December 2017 from Augsburg University with a Bachelor of the Sciences degree in Computer
-  Science and a Bachelor of the Arts degree in Computational Philosophy. I chose to study these subjects
-  as I have a long standing interest in the logical structures that give form to the world of the individual and that
-  are revealed to us through a precise inspection of the intersubjective world of the social organism. Computer Science was a practical
-  application of this curiosity and Computational Philosophy, if nothing more, was a wonderful excuse to be able to study
-  the foundations of the expression of this curiosity as present in the traditions of western philosophy. I also took
-  a minor in Mathematics while studying at Augsburg University.</p>
-  <p>Prior to my studies at Augsburg University in Minneapolis, Minnesota, I had worked at United HealthGroup where I performed the duties of a
-  software quality assurance consultant. These duties involved developing an understanding of the function of the
-  project I was assigned to and using that understanding to ensure that such a function was realized with minimal errors.
-  Before that, I had also spent time studying at Century College in White Bear Lake, Minnesota. It was there that I determined that
-  the study of Computer Science would be a profitable course of action that I would be comfortable with pursuing.
+<div class="mj-panel-center-align" id="greeting">
+  <p>
+	Hello! Welcome to my website.
+  </p>
+  <p>
+	I have created this website for the convenience of yourself, the individual
+	who has chosen to take the time to investigate the contents of my eponymous website. My hope is that any questions you might
+	have about myself are given greater insight during your visit to this site.
+  </p>
 </div>
 <br>
-<div class="mj-main">
+<div class="mj-panel-left-align" id="introduction">
+  <h3>Introduction</h3>
+  <p>
+	I graduated cum laude in December 2017 from Augsburg University with a Bachelor of the Sciences degree in Computer
+	Science and a Bachelor of the Arts degree in Computational Philosophy. I chose to study these subjects
+	as I have a long standing interest in the logical structures that give form to the world of the individual and that
+	are revealed to us through a precise inspection of the intersubjective world of the social organism. Computer Science was a practical
+	application of this curiosity and Computational Philosophy, if nothing more, was a wonderful excuse to be able to study
+	the foundations of reason and meaning as they are represented in the traditions of western philosophy. I also took
+	a minor in Mathematics while studying at Augsburg University.
+  </p>
+  <p>
+	Prior to my studies at Augsburg University in Minneapolis, Minnesota, I had worked at United HealthGroup where I performed the duties of a
+	software quality assurance consultant. These duties involved developing an understanding of the function of the
+	project I was assigned to and using that understanding to ensure that such a function was realized with minimal errors.
+	Before that, I had also spent time studying at Century College in White Bear Lake, Minnesota. It was there that I determined that
+	the study of Computer Science would be a profitable course of action that I would be comfortable with pursuing.
+  </p>
+  <p>
+	Currently I am looking for employment as a software developer. I would like to specialize as a Java developer and later move
+	on towards doing development in big data. My motivation for a pursuit of a career as a Java developer in big data is to be able to
+	work with large volumes of textual data doing analysis of that data. This would be the realm of things like Salesforce Einstein,
+	email spam filters, Google search query processing and prediction, or the auto-complete feature included with many modern cell phones.
+	I find language to be a very curious thing as it seems to create a sort of boundary for human knowledge, one that limits knowledge to
+	that which is articulable, expressable, or actionable. Everything else is a sort of holiday language, something that we must pass over in
+	silence. It is this curiosity of constraint that pulls me forward.
+  </p>
+</div>
+<br>
+<div class="mj-panel-left-align" id="professional">
   <h3>Professional History</h3>
+  <div class="mj-resume">
+	<div class="mj-resume-desc">
+      August 2017 – December 2017<br>
+      <b>Augsburg University</b><br>
+      <b>Computer Science Tutor</b><br>
+	</div>
+	<div class="mj-resume-detail">
+	  • Provided tutoring services through the open tutoring program of Augsburg University, enabling students of the
+      <br>• University to find answers to questions critical to developing a solid understanding of the Computer Sciences
+	  <br>• Tutored students in introductory and intermediate courses such as Intro to Programming, Data Structures, Algorithms, and Databases
+	  <br>• Aided students in the development of their critical reasoning and algorithmic thinking abilities
+	  <br>• Helped students to increase their understanding of the Java programming language
+	  <br>• Assisted students in their learning of the structure and theory of object-oriented programming languages
+	</div>
+	<div class="mj-resume-desc">
+	  May 2017 – July 2017<br>
+      <b>Augsburg College, Minneapolis, MN</b><br>
+      <b>Software Researcher</b><br>
+	</div>
+	<div class="mj-resume-detail">
+      • Researched techniques for training and developing neural networks to the end of pattern recognition
+      <br>• Created plan for the development and training of convolutional neural networks to autonomously identify anomalies in geomagnetic data provided by the Augsburg physics department
+      <br>• Created labeled data set from British Antarctic Survey data, used to train convolutional neural networks
+      <br>• Executed neural network training and development plan using python and the Keras machine learning library, varying network architecture and training parameters to create networks that identified anomalies in geomagnetic data with a maximum accuracy of 96%
+      <br>• Drafted and delivered presentation on this research and wrote a scholarly paper on the research performed.
+	</div>
+	<div class="mj-resume-desc">
+	  July 2016 – August 2016<br>
+      <b>Augsburg College, Minneapolis, MN</b><br>
+      <b>Software and Hardware Researcher</b><br>
+	</div>
+	<div class="mj-resume-detail">
+      • Created hardware layout for RaspberryPi fixtures that included a real time clock module and GPS module to allow the fixtures to keep reliable time, and a BNC connector to sample data from magnetometers
+      <br>• Established Raspbian operating system configurations for new RaspberryPi fixtures using bash to allow the RaspberryPis to be able to use a reliable hardware clock instead of the default virtual hardware clock
+      <br>• Drafted a 3D RaspberryPi case model in Blender 3D modeling environment to support hardware layout
+      <br>• Printed RaspberryPi cases from the 3D model using a PowerPrint 3D printer
+      <br>• Soldered and assembled RaspberryPi fixtures according to established design specifications, ensuring that the RaspberryPi fixtures accurately recorded geomagnetic data at research stations in northern Canada.
+	</div>
+	<div class="mj-resume-desc">
+	  May 2016 – June 2016<br>
+      <b>Saberpack Inc, Lino Lakes, MN</b><br>
+      <b>Software Developer</b><br>
+	</div>
+	<div class="mj-resume-detail">
+      • Solely responsible for the rebuild of critical production control software from VB with .NET 2.0 using Visual Studio 2006 to C# with .NET 4.5.1 using SharpDevelop, facilitating the tracking and labeling of hundreds of units of physical product in a given day
+      <br>• Advised the process of acquiring new hardware for production control software to replace aging hardware deployed in a high physical duress manufacturing environment
+      <br>• Migrated production data from SQL Server 2008 to SQL Server 2014 to support new hardware & software
+      <br>• Interfaced production control software with industrial scales and label printers using .NET com port libraries
+      <br>• Interfaced production control software with SQL databases using .NET database libraries and Transact SQL
+      <br>• Retained look and feel of previous software to provide a seamless work transition for users
+      <br>• Deployed new hardware and the new software running on top of it to the two manufacturing environments operated by Saberpack at their Lino Lakes facility with minimal production downtime
+      <br>• Maintained silent error logs of software to monitor non-critical software defects after initial deployment and fixed bugs that were observed through these error logs
+      <br>• Provided update deployment services to both manufacturing environments by way of batch scripting.
+	</div>
+	<div class="mj-resume-desc">
+	  May 2015 – May 2016<br>
+      <b>Saberpack Inc, Lino Lakes, MN</b><br>
+      <b>Technical Consultant</b><br>
+	</div>
+	<div class="mj-resume-detail">
+      • Advised in the design of the data storage of in house time clock software
+      <br>• Developed VBScript running in MS Excel to retrieve and display data from in house time clock software
+      <br>• Created procedures for maintaining records of climate data from manufacturing environment
+      <br>• Maintained and updated the templates for documentation of quality assurance data to account for new methods and processes used in the quality assurance process
+      <br>• Performed basic data entry from hard copies of customer invoices
+      <br>• Created plastic safety enclosure for production equipment
+      <br>• Developed product sample storage methodology for quality assurance of physical products.
+	</div>
+	<div class="mj-resume-desc">
+	  December 2013 – May 2014<br>
+      <b>United HealthGroup, Eden Prairie, MN</b><br>
+      <b>Software Quality Assurance Analyst</b><br>
+	</div>
+	<div class="mj-resume-detail">
+      • Maintained existing test cases and scenarios written in Oracle SQL to aid in the mass consolidation of data
+      <br>• Created new test cases and modified existing test cases to new scenarios using Oracle SQL and Oracle Toad
+      <br>• Designed and implemented an automated solution to text file validation using VBScript in HP QuickTest Pro to ensure that data from upstream sources was consistent in its structure
+      <br>• Recorded the results of test runs on different production cycles using HP Application Lifecycle Management
+      <br>• Provided assistance in preparing a quarterly test plan.
+	</div>
+  </div>
 </div>
 <br>
-<div class="mj-main">
+<div class="mj-panel-left-align">
   <h3>Projects</h3>
 </div>
 <br>
-<div class="mj-main">
+<div class="mj-panel-center-align" id="achievements">
   <h3>Achievements</h3>
-  <p>Augsburg University - BS Computer Science - 2017</p>
-  <p>Augsburg University - BA Computational Philosophy - 2017</p>
-  <p>Augsburg University - Latin Honors - 2017</p>
-  <p>Augsburg College - URGO Research Grant - 2017</p>
-  <p>Century College - Associate of the Arts - 2013</p>
+  <p>
+    Augsburg University - BS Computer Science - 2017
+  </p>
+  <p>
+    Augsburg University - BA Computational Philosophy - 2017
+  </p>
+  <p>
+    Augsburg University - Latin Honors - 2017
+  </p>
+  <p>
+    Augsburg College - URGO Research Grant - 2017
+  </p>
+  <p>
+    Century College - Associate of the Arts - 2013
+  </p>
 </div>
 <br>
-<div class="mj-main">
+<div class="mj-panel-left-align" id="personal">
   <h3>Personal</h3>
+  <p>
+    I like a lot of stuff. Almost everything. At some point in the past, I had a realization that I would be unable to literally know
+    everything and do anything. It would appear for myself there simply is not enough time to know all Mathematics,
+    all Physics, all Chemistry, all of Science, all of Philosophy, all of that which gives meaning to humanity; that there is not enough
+    time to see every point on the planet and to have conversations with every one of its inhabitants, that I lack the time to be able
+    to experience all that this planet has to offer. As a result of this realization, I am now doing my best to stay focused on
+    several areas in which I might develop proficiency and demonstrate excellence while simultaneously retaining a curiosity that is inclined
+    to consider the broader and wider fullness that is the human experience. So far it seems like the areas that I have the most drive
+    for are computer science and linguistics, along with camping to keep me anchored in the real world. I am not always convinced that
+    these interests are anything but arbitrary, and there are days where this drive is greater than others. Despite this, I continue along
+    with the subjects that I have thus far chosen to pursue.
+  </p>
+  <div class="mj-half">
+    <p>
+	  For the computer science and linguistics stuff, please do check out the links I have provided in the <a href="#projects">Projects</a>
+      section of this page. For the stuff that anchors me, that perhaps allow me appear a little bit more human than machine, I have included
+      a image browser to the right that shows several of the pictures that I have taken on my journies. The journies that I have included in
+      this image browser are from a trip to the Badlands that I took in 2015 and a trip through the American West that I had undertaken in 2017.
+      Both of these journies pushed my boundaries of self comfort and in doing so expanded my horizons. The next long trip I plan to take is
+      a excursion to Death Valley during the middle of winter when I might actually be able to camp there without an air conditioned tent.
+	</p>
+    <p>
+	  On an average day, you will hopefully find me busy at work or engaged with something stimulating like a book, video game, or my guitar.
+	</p>
+  </div>
+  <div class="mj-half">
+    Content
+  </div>
 </div>
 <br>
-<div class="mj-main">
+<div class="mj-panel-center-align" id="contact">
   <h3>Contact Me</h3>
-  <a style="padding:20px">me@matthewjohnson42.com</a>
+  <a style="padding:20px">dev@matthewjohnson42.com</a>
   <img src="sep.png" style="height:10px;width:auto;">
   <a style="padding:20px">C: 651-261-6353</a>
   <img src="sep.png" style="height:10px;width:auto;">
