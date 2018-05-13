@@ -8,28 +8,45 @@
   body {
     background-color: #4b4b4b;
   }
-  div.mj-header {
-    position: relative;
-    background-color: #dcdcdc;
-    padding: 20px;
-    border: 5px solid #000000;
-    border-radius: 10px;
-    font-family: "Arial", serif;
-    font-size: 30px;
-    text-align: center;
-    line-height: 0px;
+  button {
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
   }
-  div.mj-bar {
+  p {
+	margin-left: 30px;
+	margin-right: 30px;
+  }
+  h3 {
+	text-align: center;
+  }
+  h4 {
+	text-align: left;
+	margin-left: 30px;
+  }
+  .header {
+    position: relative;
+	height: 97vh;
+    background-color: rgba(240,240,240,0.5);
+    border-style: solid;
+	border-color: #000000;
+	border-width: thick;
+    border-radius: 5%;
+    font-family: "Arial", serif;
+	text-align: center;
+  }
+  .navigation-bar {
     position: relative;
     background-color: #dcdcdc;
     padding: 5px;
-    border: 1px solid #000000;
+    border-style: solid;
+	border-width: medium;
     border-radius: 10px;
     font-family: "Arial", serif;
     font-size: 15px;
     text-align: center;
   }
-  div.mj-panel-left-align {
+  .panel-left-align {
     position: relative;
     background-color: #dcdcdc;
     padding: 10px;
@@ -38,9 +55,9 @@
     font-family: "Arial", serif;
     font-size: 15px;
     text-align: left;
-	line-height:1.5;
+	line-height: 1.5;
   }
-  div.mj-panel-center-align {
+  .panel-center-align {
     position: relative;
     background-color: #dcdcdc;
     padding: 10px;
@@ -49,58 +66,77 @@
     font-family: "Arial", serif;
     font-size: 15px;
     text-align: center;
-	line-height:1.5;
+	line-height: 1.5;
   }
-  div.mj-half {
+  .half-panel {
     position: relative;
     width: 49%;
     display: inline-grid;
   }
-  div.mj-resume {
+  .resume {
 	text-align: left;
 	max-width: 1000px;
     margin: auto;
 	word-break: break-word;
   }
-  div.mj-resume-desc{
-	padding:10px;
+  .resume-desc{
+	padding: 10px;
   }
-  div.mj-resume-detail{
-    padding:10px;
-	margin-left:30px;
+  .resume-detail{
+    padding: 10px;
+	margin-left: 30px;
   }
-  button {
-    background-color: #ffffff;
-    padding: 5px;
-    border-radius: 5px;
+  .uparrow{
+	width: auto;
+	height: 5vh;
+	position: fixed;
+	z-index: 1;
+	top: 5%;
+	right: 5%;"
   }
-  p {
-	margin-left:30px;
-	margin-right:30px;
+  .headshot{
+	position: relative;
+	width: auto;
+	height: 40vmin;
+	top: 10vh;
+	border-style: solid;
+	border-width: thin;
+	border-radius: 100%;
   }
-  h3 {
-	text-align:center;
+  .title-name{
+	position: relative;
+	top: 5vh;
+	font-size: 10vmin;
+  }
+  .title-desc{
+	position: relative;
+	top: 5vh;
+	font-size: 6vmin;
   }
 </style>
 </head>
 
 <body>
-<div class="mj-header">
-  <img src="headshot.jpg" style="width:150px;height:150px;border-radius:75px;border:1px solid #000000">
-  <p>Matthew Johnson</p>
-  <p style="font-size:15px">Aspiring Computer Scientist, recent grad from Augsburg University</p>
+
+<img src="uparrow.png" class="uparrow">
+
+<div class="header">
+  <img src="headshot.jpg" class="headshot"><br>
+  <p class="title-name">Matthew Johnson</p>
+  <p class="title-desc">Aspiring Computer Scientist, recent grad from Augsburg University</p>
 </div>
 <br>
-<div class="mj-bar">
-  <button type="button" onclick="">Introduction</button>
-  <button type="button">Professional History</button>
-  <button type="button">Projects</button>
-  <button type="button">Achievements</button>
-  <button type="button">Personal</button>
-  <button type="button">Contact Me</button>
+
+<div class="navigation-bar">
+  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#introduction';">Introduction</button>
+  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#professional';">Professional History</button>
+  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#projects';">Projects</button>
+  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#achievements';">Achievements</button>
+  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#personal';">Personal</button>
+  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#contact';">Contact Me</button>
 </div>
 <br>
-<div class="mj-panel-center-align" id="greeting">
+<div class="panel-center-align" id="greeting">
   <p>
 	Hello! Welcome to my website.
   </p>
@@ -111,7 +147,7 @@
   </p>
 </div>
 <br>
-<div class="mj-panel-left-align" id="introduction">
+<div class="panel-left-align" id="introduction">
   <h3>Introduction</h3>
   <p>
 	I graduated cum laude in December 2017 from Augsburg University with a Bachelor of the Sciences degree in Computer
@@ -140,15 +176,15 @@
   </p>
 </div>
 <br>
-<div class="mj-panel-left-align" id="professional">
+<div class="panel-left-align" id="professional">
   <h3>Professional History</h3>
-  <div class="mj-resume">
-	<div class="mj-resume-desc">
+  <div class="resume">
+	<div class="resume-desc">
       August 2017 – December 2017<br>
       <b>Augsburg University</b><br>
       <b>Computer Science Tutor</b><br>
 	</div>
-	<div class="mj-resume-detail">
+	<div class="resume-detail">
 	  • Provided tutoring services through the open tutoring program of Augsburg University, enabling students of the
       <br>• University to find answers to questions critical to developing a solid understanding of the Computer Sciences
 	  <br>• Tutored students in introductory and intermediate courses such as Intro to Programming, Data Structures, Algorithms, and Databases
@@ -156,36 +192,36 @@
 	  <br>• Helped students to increase their understanding of the Java programming language
 	  <br>• Assisted students in their learning of the structure and theory of object-oriented programming languages
 	</div>
-	<div class="mj-resume-desc">
+	<div class="resume-desc">
 	  May 2017 – July 2017<br>
       <b>Augsburg College, Minneapolis, MN</b><br>
       <b>Software Researcher</b><br>
 	</div>
-	<div class="mj-resume-detail">
+	<div class="resume-detail">
       • Researched techniques for training and developing neural networks to the end of pattern recognition
       <br>• Created plan for the development and training of convolutional neural networks to autonomously identify anomalies in geomagnetic data provided by the Augsburg physics department
       <br>• Created labeled data set from British Antarctic Survey data, used to train convolutional neural networks
       <br>• Executed neural network training and development plan using python and the Keras machine learning library, varying network architecture and training parameters to create networks that identified anomalies in geomagnetic data with a maximum accuracy of 96%
       <br>• Drafted and delivered presentation on this research and wrote a scholarly paper on the research performed.
 	</div>
-	<div class="mj-resume-desc">
+	<div class="resume-desc">
 	  July 2016 – August 2016<br>
       <b>Augsburg College, Minneapolis, MN</b><br>
       <b>Software and Hardware Researcher</b><br>
 	</div>
-	<div class="mj-resume-detail">
+	<div class="resume-detail">
       • Created hardware layout for RaspberryPi fixtures that included a real time clock module and GPS module to allow the fixtures to keep reliable time, and a BNC connector to sample data from magnetometers
       <br>• Established Raspbian operating system configurations for new RaspberryPi fixtures using bash to allow the RaspberryPis to be able to use a reliable hardware clock instead of the default virtual hardware clock
       <br>• Drafted a 3D RaspberryPi case model in Blender 3D modeling environment to support hardware layout
       <br>• Printed RaspberryPi cases from the 3D model using a PowerPrint 3D printer
       <br>• Soldered and assembled RaspberryPi fixtures according to established design specifications, ensuring that the RaspberryPi fixtures accurately recorded geomagnetic data at research stations in northern Canada.
 	</div>
-	<div class="mj-resume-desc">
+	<div class="resume-desc">
 	  May 2016 – June 2016<br>
       <b>Saberpack Inc, Lino Lakes, MN</b><br>
       <b>Software Developer</b><br>
 	</div>
-	<div class="mj-resume-detail">
+	<div class="resume-detail">
       • Solely responsible for the rebuild of critical production control software from VB with .NET 2.0 using Visual Studio 2006 to C# with .NET 4.5.1 using SharpDevelop, facilitating the tracking and labeling of hundreds of units of physical product in a given day
       <br>• Advised the process of acquiring new hardware for production control software to replace aging hardware deployed in a high physical duress manufacturing environment
       <br>• Migrated production data from SQL Server 2008 to SQL Server 2014 to support new hardware & software
@@ -196,12 +232,12 @@
       <br>• Maintained silent error logs of software to monitor non-critical software defects after initial deployment and fixed bugs that were observed through these error logs
       <br>• Provided update deployment services to both manufacturing environments by way of batch scripting.
 	</div>
-	<div class="mj-resume-desc">
+	<div class="resume-desc">
 	  May 2015 – May 2016<br>
       <b>Saberpack Inc, Lino Lakes, MN</b><br>
       <b>Technical Consultant</b><br>
 	</div>
-	<div class="mj-resume-detail">
+	<div class="resume-detail">
       • Advised in the design of the data storage of in house time clock software
       <br>• Developed VBScript running in MS Excel to retrieve and display data from in house time clock software
       <br>• Created procedures for maintaining records of climate data from manufacturing environment
@@ -210,12 +246,12 @@
       <br>• Created plastic safety enclosure for production equipment
       <br>• Developed product sample storage methodology for quality assurance of physical products.
 	</div>
-	<div class="mj-resume-desc">
+	<div class="resume-desc">
 	  December 2013 – May 2014<br>
       <b>United HealthGroup, Eden Prairie, MN</b><br>
       <b>Software Quality Assurance Analyst</b><br>
 	</div>
-	<div class="mj-resume-detail">
+	<div class="resume-detail">
       • Maintained existing test cases and scenarios written in Oracle SQL to aid in the mass consolidation of data
       <br>• Created new test cases and modified existing test cases to new scenarios using Oracle SQL and Oracle Toad
       <br>• Designed and implemented an automated solution to text file validation using VBScript in HP QuickTest Pro to ensure that data from upstream sources was consistent in its structure
@@ -225,11 +261,24 @@
   </div>
 </div>
 <br>
-<div class="mj-panel-left-align">
+<div class="panel-left-align" id="projects">
   <h3>Projects</h3>
+  <p>
+	I have worked on several projects during the time that I have spent building my understanding of the world of programming. I have not worked on anything at the
+	level of an enterprise application, but I have been responsible for the completion of projects of modest size. Throughout the completion of the various projects that
+	I have worked on, I have done my best to balance developing a complete understanding of the material being used along with the expediance necessary to be able to 
+	deliver the project on time. For me the technology, be it a langauge or framework, is more often than not the means to an end. This is not to say that I do not value 
+	the technologies that I have drawn upon, but rather that for myself understanding of the functioning of these technologies has more often than not better enabled me 
+	to utilize them than focusing on the narrow details such as the syntax of a language or obscure semantics. When I have the function of the project in mind, the details 
+	tend to fill in as I proceed.
+  </p>
+  <h4>Pascal Compiler</h4>
+  <p>
+	The most recently completed project is my Pascal compiler, which was a project that was 
+  </p>
 </div>
 <br>
-<div class="mj-panel-center-align" id="achievements">
+<div class="panel-center-align" id="achievements">
   <h3>Achievements</h3>
   <p>
     Augsburg University - BS Computer Science - 2017
@@ -248,7 +297,7 @@
   </p>
 </div>
 <br>
-<div class="mj-panel-left-align" id="personal">
+<div class="panel-left-align" id="personal">
   <h3>Personal</h3>
   <p>
     I like a lot of stuff. Almost everything. At some point in the past, I had a realization that I would be unable to literally know
@@ -262,7 +311,7 @@
     these interests are anything but arbitrary, and there are days where this drive is greater than others. Despite this, I continue along
     with the subjects that I have thus far chosen to pursue.
   </p>
-  <div class="mj-half">
+  <div class="half-panel">
     <p>
 	  For the computer science and linguistics stuff, please do check out the links I have provided in the <a href="#projects">Projects</a>
       section of this page. For the stuff that anchors me, that perhaps allow me appear a little bit more human than machine, I have included
@@ -275,12 +324,12 @@
 	  On an average day, you will hopefully find me busy at work or engaged with something stimulating like a book, video game, or my guitar.
 	</p>
   </div>
-  <div class="mj-half">
+  <div class="half-panel">
     Content
   </div>
 </div>
 <br>
-<div class="mj-panel-center-align" id="contact">
+<div class="panel-center-align" id="contact">
   <h3>Contact Me</h3>
   <a style="padding:20px">dev@matthewjohnson42.com</a>
   <img src="sep.png" style="height:10px;width:auto;">
