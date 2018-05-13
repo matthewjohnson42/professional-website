@@ -24,6 +24,14 @@
 	text-align: left;
 	margin-left: 30px;
   }
+  .uparrow{
+	width: auto;
+	height: 5vh;
+	position: fixed;
+	z-index: 1;
+	top: 5%;
+	right: 5%;"
+  }
   .header {
     position: relative;
 	height: 97vh;
@@ -31,20 +39,43 @@
     border-style: solid;
 	border-color: #000000;
 	border-width: thick;
-    border-radius: 5%;
+    border-radius: 2vh;
     font-family: "Arial", serif;
 	text-align: center;
+  }
+  .headshot{
+	position: relative;
+	width: auto;
+	height: 40vmin;
+	top: 10vh;
+	border-style: solid;
+	border-width: thin;
+	border-radius: 100%;
+  }
+  .title-name{
+	position: relative;
+	top: 5vh;
+	font-size: 10vmin;
+  }
+  .title-desc{
+	position: relative;
+	top: 5vh;
+	font-size: 6vmin;
   }
   .navigation-bar {
     position: relative;
     background-color: #dcdcdc;
-    padding: 5px;
+    padding: 2vw;
     border-style: solid;
 	border-width: medium;
-    border-radius: 10px;
-    font-family: "Arial", serif;
-    font-size: 15px;
+    border-radius: 2vh;
     text-align: center;
+  }
+  .navigation-button {
+    type: button;
+	font-family: "Arial", serif;
+	font-size: 3vh;
+	padding: 1vw;
   }
   .panel-left-align {
     position: relative;
@@ -86,39 +117,31 @@
     padding: 10px;
 	margin-left: 30px;
   }
-  .uparrow{
-	width: auto;
-	height: 5vh;
-	position: fixed;
-	z-index: 1;
-	top: 5%;
-	right: 5%;"
-  }
-  .headshot{
-	position: relative;
-	width: auto;
-	height: 40vmin;
-	top: 10vh;
-	border-style: solid;
-	border-width: thin;
-	border-radius: 100%;
-  }
-  .title-name{
-	position: relative;
-	top: 5vh;
-	font-size: 10vmin;
-  }
-  .title-desc{
-	position: relative;
-	top: 5vh;
-	font-size: 6vmin;
-  }
 </style>
+
+<script>
+  //display the uparrow element when not at the top of the page.
+  window.onscroll = function() {displayUpArrow()};
+  function displayUpArrow(){
+	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+		document.getElementById("uparrow").style.display = "block";
+	} else {
+		document.getElementById("uparrow").style.display = "none";
+	}
+  }
+  
+  //go to the top of the page. function for the uparrow element.
+  function goToTop(){
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+  }
+</script>
+
 </head>
 
 <body>
 
-<img src="uparrow.png" class="uparrow">
+<input type="image" src="uparrow.png" class="uparrow" id="uparrow" onclick="goToTop();" />
 
 <div class="header">
   <img src="headshot.jpg" class="headshot"><br>
@@ -128,12 +151,12 @@
 <br>
 
 <div class="navigation-bar">
-  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#introduction';">Introduction</button>
-  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#professional';">Professional History</button>
-  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#projects';">Projects</button>
-  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#achievements';">Achievements</button>
-  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#personal';">Personal</button>
-  <button type="button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#contact';">Contact Me</button>
+  <button class="navigation-button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#introduction';">Introduction</button>
+  <button class="navigation-button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#professional';">Professional History</button>
+  <button class="navigation-button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#projects';">Projects</button>
+  <button class="navigation-button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#achievements';">Achievements</button>
+  <button class="navigation-button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#personal';">Personal</button>
+  <button class="navigation-button" onclick="window.location = 'file:///D:/mjohnson/Website/index.html#contact';">Contact Me</button>
 </div>
 <br>
 <div class="panel-center-align" id="greeting">
