@@ -1,419 +1,191 @@
-<!doctype html>
-<html lang="en-US">
-<meta charset="utf-8">
-
+<!DOCTYPE html>
+<html lang="en-US" class="js no-svg">
 <head>
-  <title>Matthew Johnson, Professional Webpage</title>
-<style>
-  body {
-    background-color: #4b4b4b;
-	margin: 0;
-  }
-  p {
-	margin-left: 30px;
-	margin-right: 30px;
-  }
-  .h-center {
-	text-align: center;
-	font-size: 3vh;
-  }
-  .h-left {
-	text-align: left;
-	margin-left: 30px;
-	font-size: 2.5vh;
-  }
-  .uparrow{
-	display: none;
-	width: auto;
-	height: 5vh;
-	position: fixed;
-	z-index: 1;
-	top: 5%;
-	right: 5%;"
-  }
-  .header {
-    position: relative;
-	height: 100vh;
-    background-color: rgba(240,240,240,0.5);
-    border-style: solid;
-    font-family: "Arial", serif;
-	text-align: center;
-  }
-  .headshot{
-	position: relative;
-	top: 5vh;
-	width: 40vmin;
-	height: auto;
-	border-style: solid;
-	border-width: thin;
-	border-radius: 100%;
-  }
-  .title-name{
-	position: relative;
-	top: 4vh;
-	font-size: 7vh;
-  }
-  .title-desc{
-	position: relative;
-	top: 5vh;
-	font-size: 4vh;
-  }
-  .navigation-bar {
-    position: relative;
-	top: 10vh;
-    text-align: center;
-  }
-  .navigation-button {
-	font-family: "Arial", serif;
-	font-size: 2vh;
-	padding: .5vw;
-    border-radius: 1vh;
-  }
-  .greeting {
-    position: relative;
-    background-color: #dcdcdc;
-    padding: 2vh;
-    border-style: solid;
-	border-width: thin;
-    border-radius: 2vh;
-    font-family: "Arial", serif;
-    font-size: 2vh;
-    text-align: center;
-	line-height: 1.5;
-  }
-  .panel-left-align {
-    position: relative;
-    background-color: #dcdcdc;
-    padding: 2vh;
-    border-style: solid;
-	border-width: thin;
-    border-radius: 1vh;
-    border-radius: 2vh;
-    font-family: "Arial", serif;
-    font-size: 2vh;
-    text-align: left;
-	line-height: 1.5;
-  }
-  .panel-center-align {
-    position: relative;
-    background-color: #dcdcdc;
-    padding: 2vh;
-    border-style: solid;
-	border-width: thin;
-    border-radius: 1vh;
-    border-radius: 2vh;
-    font-family: "Arial", serif;
-    font-size: 2vh;
-    text-align: center;
-	line-height: 1.5;
-  }
-  .resume {
-	text-align: left;
-	max-width: 1000px;
-    margin: auto;
-	word-break: break-word;
-  }
-  .resume-desc{
-	padding: 1vh;
-  }
-  .resume-detail{
-    padding: 1vh;
-	margin-left: 2.5vw;
-  }
-  .half-panel {
-    position: relative;
-    width: 49%;
-    display: inline-grid;
-  }
-</style>
-
-<script>
-  //display the uparrow element when not at the top of the page.
-  window.onscroll = function() {displayUpArrow()};
-  function displayUpArrow(){
-	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
-		document.getElementById("uparrow").style.display = "block";
-	} else {
-		document.getElementById("uparrow").style.display = "none";
-	}
-  }
-  
-  //go to the top of the page. function for the uparrow element.
-  function goToGreeting(){
-		window.location = 'index.html#header';
-  }
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.9.1/baguetteBox.min.css">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="./favicon.ico">
+    <title>Matthew Johnson</title>
+    <script>
+        // a script that handles display of a down arrow to indicate to user they can scroll down.
+        // while most of this site was adapted from a website builder's output, this and the link to google maps on the
+        // about.html page were made from scratch, including the image for the down arrow. i'm pretty sure there's a js
+        // library that does this already somewhere out there but i decided to make this instead of finding the correct
+        // search terms to get the library.
+        const pageLoad = Date.now();
+        let hasMovedOutOfRange = false;
+        const fadeRange = 55
+        const fadeTimeLB = 4000
+        const fadeTimeUB = 5000
+        window.onscroll = function() {displayReturnToTop()};
+        window.setInterval(function(){
+            var timeFromLoad = Date.now() - pageLoad
+            if(timeFromLoad > fadeTimeLB && timeFromLoad < fadeTimeUB && document.documentElement.scrollTop < fadeRange){
+                document.getElementById("downarrow").style.opacity = (timeFromLoad - 4000) * .001
+            }
+        })
+        function displayReturnToTop(){
+            var timeFromLoad = Date.now() - pageLoad
+            if (timeFromLoad > fadeTimeUB && document.documentElement.scrollTop < fadeRange && !hasMovedOutOfRange) {
+                document.getElementById("downarrow").style.opacity = (fadeRange - document.documentElement.scrollTop) * (1/fadeRange)
+            } else if (document.documentElement.scrollTop >= fadeRange ) {
+                document.getElementById("downarrow").style.display = "none";
+                hasMovedOutOfRange = true;
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body class="home page-template-default page">
 
-<input type="image" src="images/uparrow.png" class="uparrow" id="uparrow" onclick="goToGreeting();" />
-
-<div class="header" id="header">
-  <img src="images/headshot.jpg" class="headshot">
-  <p class="title-name">Matthew Johnson</p>
-  <p class="title-desc">Aspiring Computer Scientist, recent grad from Augsburg University</p>
-  <div class="navigation-bar">
-    <input type="button" class="navigation-button" value="Introduction" onclick="window.location = 'index.html#introduction';">
-    <input type="button" class="navigation-button" value="Professional History" onclick="window.location = 'index.html#professional';">
-    <input type="button" class="navigation-button" value="Projects" onclick="window.location = 'index.html#projects';">
-    <input type="button" class="navigation-button" value="Achievements" onclick="window.location = 'index.html#achievements';">
-    <input type="button" class="navigation-button" value="Personal" onclick="window.location = 'index.html#personal';">
-    <input type="button" class="navigation-button" value="Contact Me" onclick="window.location = 'index.html#contact';">
-  </div>
-</div>
-<br>
-
-<div class="panel-left-align" id="introduction">
-  <h1 class="h-center">Introduction</h1>
-  <p>
-	Hello! Welcome to my website.
-  </p>
-  <p>
-	I have created this website for the convenience of yourself, the individual
-	who has chosen to take the time to investigate the contents of my eponymous website. My hope is that any questions you might
-	have about myself are given greater insight during your visit to this site.
-  </p>
-  <p>
-	I graduated cum laude in December 2017 from Augsburg University with a Bachelor of the Sciences degree in Computer
-	Science and a Bachelor of the Arts degree in Computational Philosophy. I chose to study these subjects
-	as I have a long standing interest in the logical structures that give form to the world of the individual and that
-	are revealed to us through a precise inspection of the intersubjective world of the social organism. Computer Science was a practical
-	application of this curiosity and Computational Philosophy, if nothing more, was a wonderful excuse to be able to study
-	the foundations of critical reasoning and of the quest for providing the world meaning. I also took
-	a minor in Mathematics while studying at Augsburg University.
-  </p>
-  <p>
-	Prior to my studies at Augsburg University in Minneapolis, Minnesota, I had worked at United HealthGroup where I performed the duties of a
-	software quality assurance consultant. These duties involved developing an understanding of the function of the
-	project I was assigned to and using that understanding to ensure that such a function was realized with minimal errors.
-	Before that, I had also spent time studying at Century College in White Bear Lake, Minnesota. It was there that I determined that
-	the study of Computer Science would be a profitable course of action that I would be comfortable with pursuing.
-  </p>
-  <p>
-	Currently I am looking for employment as a software developer. I would like to specialize as a Java developer and later move
-	on towards doing development in big data. My motivation for a pursuit of a career as a Java developer in big data is to be able to
-	work with large volumes of textual data doing analysis of that data. This would be the realm of things like Salesforce Einstein,
-	email spam filters, Google search query processing and prediction, or the auto-complete feature included with many modern cell phones.
-	I find language to be a very curious thing as it seems to create a sort of boundary for human knowledge, one that limits knowledge to
-	that which is articulable, expressable, or actionable. Everything else is a sort of holiday language, something that we must pass over in
-	silence. It is this curiosity of constraint that pulls me forward.
-  </p>
-</div>
-<br>
-<div class="panel-left-align" id="professional">
-  <h1 class="h-center">Professional History</h1>
-  <div class="resume">
-	<div class="resume-desc">
-      August 2017 – December 2017<br>
-      <b>Augsburg University</b><br>
-      <b>Computer Science Tutor</b><br>
-	</div>
-	<div class="resume-detail">
-	  • Provided tutoring services through the open tutoring program of Augsburg University, enabling students of the University to find answers to questions critical to developing a solid understanding of the Computer Sciences
-	  <br>• Tutored students in introductory and intermediate courses such as Intro to Programming, Data Structures, Algorithms, and Databases
-	  <br>• Aided students in the development of their critical reasoning and algorithmic thinking abilities
-	  <br>• Helped students to increase their understanding of the Java programming language
-	  <br>• Assisted students in their learning of the structure and theory of object-oriented programming languages
-	</div>
-	<div class="resume-desc">
-	  May 2017 – July 2017<br>
-      <b>Augsburg College, Minneapolis, MN</b><br>
-      <b>Software Researcher</b><br>
-	</div>
-	<div class="resume-detail">
-      • Researched techniques for training and developing neural networks to the end of pattern recognition
-      <br>• Created plan for the development and training of convolutional neural networks to autonomously identify anomalies in geomagnetic data provided by the Augsburg physics department
-      <br>• Created labeled data set from British Antarctic Survey data, used to train convolutional neural networks
-      <br>• Executed neural network training and development plan using python and the Keras machine learning library, varying network architecture and training parameters to create networks that identified anomalies in geomagnetic data with a maximum accuracy of 96%
-      <br>• Drafted and delivered presentation on this research and wrote a scholarly paper on the research performed.
-	</div>
-	<div class="resume-desc">
-	  July 2016 – August 2016<br>
-      <b>Augsburg College, Minneapolis, MN</b><br>
-      <b>Software and Hardware Researcher</b><br>
-	</div>
-	<div class="resume-detail">
-      • Created hardware layout for RaspberryPi fixtures that included a real time clock module and GPS module to allow the fixtures to keep reliable time, and a BNC connector to sample data from magnetometers
-      <br>• Established Raspbian operating system configurations for new RaspberryPi fixtures using bash to allow the RaspberryPis to be able to use a reliable hardware clock instead of the default virtual hardware clock
-      <br>• Drafted a 3D RaspberryPi case model in Blender 3D modeling environment to support hardware layout
-      <br>• Printed RaspberryPi cases from the 3D model using a PowerPrint 3D printer
-      <br>• Soldered and assembled RaspberryPi fixtures according to established design specifications, ensuring that the RaspberryPi fixtures accurately recorded geomagnetic data at research stations in northern Canada.
-	</div>
-	<div class="resume-desc">
-	  May 2016 – June 2016<br>
-      <b>Saberpack Inc, Lino Lakes, MN</b><br>
-      <b>Software Developer</b><br>
-	</div>
-	<div class="resume-detail">
-      • Solely responsible for the rebuild of critical production control software from VB with .NET 2.0 using Visual Studio 2006 to C# with .NET 4.5.1 using SharpDevelop, facilitating the tracking and labeling of hundreds of units of physical product in a given day
-      <br>• Advised the process of acquiring new hardware for production control software to replace aging hardware deployed in a high physical duress manufacturing environment
-      <br>• Migrated production data from SQL Server 2008 to SQL Server 2014 to support new hardware & software
-      <br>• Interfaced production control software with industrial scales and label printers using .NET com port libraries
-      <br>• Interfaced production control software with SQL databases using .NET database libraries and Transact SQL
-      <br>• Retained look and feel of previous software to provide a seamless work transition for users
-      <br>• Deployed new hardware and the new software running on top of it to the two manufacturing environments operated by Saberpack at their Lino Lakes facility with minimal production downtime
-      <br>• Maintained silent error logs of software to monitor non-critical software defects after initial deployment and fixed bugs that were observed through these error logs
-      <br>• Provided update deployment services to both manufacturing environments by way of batch scripting.
-	</div>
-	<div class="resume-desc">
-	  May 2015 – May 2016<br>
-      <b>Saberpack Inc, Lino Lakes, MN</b><br>
-      <b>Technical Consultant</b><br>
-	</div>
-	<div class="resume-detail">
-      • Advised in the design of the data storage of in house time clock software
-      <br>• Developed VBScript running in MS Excel to retrieve and display data from in house time clock software
-      <br>• Created procedures for maintaining records of climate data from manufacturing environment
-      <br>• Maintained and updated the templates for documentation of quality assurance data to account for new methods and processes used in the quality assurance process
-      <br>• Performed basic data entry from hard copies of customer invoices
-      <br>• Created plastic safety enclosure for production equipment
-      <br>• Developed product sample storage methodology for quality assurance of physical products.
-	</div>
-	<div class="resume-desc">
-	  December 2013 – May 2014<br>
-      <b>United HealthGroup, Eden Prairie, MN</b><br>
-      <b>Software Quality Assurance Analyst</b><br>
-	</div>
-	<div class="resume-detail">
-      • Maintained existing test cases and scenarios written in Oracle SQL to aid in the mass consolidation of data
-      <br>• Created new test cases and modified existing test cases to new scenarios using Oracle SQL and Oracle Toad
-      <br>• Designed and implemented an automated solution to text file validation using VBScript in HP QuickTest Pro to ensure that data from upstream sources was consistent in its structure
-      <br>• Recorded the results of test runs on different production cycles using HP Application Lifecycle Management
-      <br>• Provided assistance in preparing a quarterly test plan.
-	</div>
-  </div>
-</div>
-<br>
-<div class="panel-left-align" id="projects">
-  <h1 class="h-center">Projects</h1>
-  <p>
-	I have worked on several projects during the time that I have spent building my understanding of the world of programming. I have not worked on anything at the
-	level of an enterprise application, but I have been responsible for the completion of projects of modest size. Throughout the completion of the various projects that
-	I have worked on, I have done my best to balance developing a complete understanding of the material being used along with the expediance necessary to be able to 
-	deliver the project on time. For me the technology, be it a langauge or framework, is more often than not the means to an end. This is not to say that I do not value 
-	the technologies that I have drawn upon, but rather that for myself understanding of the functioning of these technologies has more often than not better enabled me 
-	to utilize them than focusing on the narrow details such as the syntax of a language or obscure semantics. When I have the function of the project in mind, the details 
-	tend to fill in as I proceed.
-  </p>
-  <h1 class="h-left">MACCS Neural Network</h1>
-  <p style="margin-left: 2.5vw;">
-  </p>
-  <h1 class="h-left">Pascal Compiler</h1>
-  <p style="margin-left: 2.5vw;">
-	Another project that I undertook is my Pascal compiler, which was a project that constituted the capstone for the Computer Science curriculum at Augsburg College,
-	now Augsburg University. The compiler is implemented in Java and was tested using Junit. It was completed in April 2017.
-  </p>
-  <p style="margin-left: 2.5vw;">
-	The compiler is a recursive descent compiler that utilizes a non deterministic finite automaton for tokenization and a context free grammar 
-	for the construction of the syntax tree. The target language is MIPS assembly, an older assembly language that is utilized in coursework at Augsburg University. The 
-	grammar was provided to the students along with the recursive descent compiler architecture. Tokenization was to be completed using the tool JFlex, a piece of Java 
-	software that takes as input a text file specifying a state machine and providing as output the Java implementation of that state machine. Implementation and unit testing 
-	the compiler specifications were left to the students. Put simply, this compiler takes as input a file containing text written in a subset of the language Pascal and 
-	provides as output the assembly instructions for a CPU that uses the MIPS architecture.
-  </p>
-  <p style="margin-left: 2.5vw;">
-    There are several things that are notable about this project in regards to my performance on implementation. First, the compiler performs exactly to specification.
-	I received a 4.0 of 4.0 for this capstone. Second, the compiler included functionality that was dismissed from the compiler specifications based on the amount of time
-	remaining for students to be able to complete the project. This functionality was the inclusion of callable methods/functions and of arrays.
-  </p>
-  <p style="margin-left: 2.5vw;">
-    I very much enjoyed the compiler project. It was a reasonably complex piece of software and although it does not compile all Pascal code, I am content to know that I 
-	was capable of understanding compiler theory with sufficient precision so as to be able to create this compiler. The theory really was what interested me most about the
-	course as it really does dig into the logic that it was necessary to develop in order to be able to create compilers. This is an example of my preference for the theory 
-	and concepts involved in a project above the details of an implementation.
-  </p>
-  <h1 class="h-left">Saberpack Production Control</h1>
-  <p style="margin-left: 2.5vw;">
-    This is a project that I undertook in months of May and June in 2016. It is a piece of software that tracks the production of a glass packaging product for the purposes
-	of retaining quality assurance for that glass packaging product. The product is called glass interleaving powder, and is a substance placed between large flat panes of glass
-	prior to the glass being shipped from the glass production facility. The software takes as input the weight of a bag of the interleaving powder and provides as output a 
-	bag label with a lot and bag number. This data, along with user input specifying environmental conditions such as temperature and relative humidity, was stored in a database 
-	for later reference. The software was deployed to the manufacturing environments at Saberpack in June of 2016, where it continues to reliably track the production of material.
-  </p>
-  <p style="margin-left: 2.5vw;">
-    This project was a rebuild of an existing piece of software that was written in Visual Basic. The existing piece of software was written in 2008 and was desgined to run 
-	on Windows XP machines and utilizing the .NET framework version 2.0 to interface with comm port peripherals and with a SQL Server Express 2007 instance. The goal of this 
-	project was to get the software running on new machines that could replace the aging equipment located in an environment with high amounts of particulate in the air.
-  </p>
-  <p style="margin-left: 2.5vw;">
-    There were major hurdles in this project, with the first one being a .NET dependency that did not have an equivalent distribution for versions of Windows later than XP.
-	Given that XP was no longer being supported by Microsoft, it was suggested that the code base be updated to run on a more modern operating system. Windows 10 was chosen 
-	as the operating system based on Microsoft's stated plans for supporting their operating systems, and C# was chosen as the language of implementation based on the observation 
-	that the language is well supported on modern Windows distributions and has well supported access to the .NET framework. Another major hurdle for myself as a developer was 
-	the schedule for the delivery of this software. The planned expense for this project was fairly low and thus the time I had to develop this software was limited. The result
-    this was that corners were cut in the course of development to ensure the project was completed on time. For example, there was no test suite used to test this software; all 
-	testing was done by analysing stack traces or using break points and console output.
-  </p>
-  <p style="margin-left: 2.5vw;">
-    There is one main thing that is notable about this project in regrads to my performance: I went into a situation where I had no knowledge of the existing tech stack,
-	limited documentation (only code comments), no communication with the original developer, and yet within two months I had learned enough about the function of the software 
-	to be able to provide a technology solution for the company. I did not know SQL Server before this project. I did not know C# prior to this project. I had never worked with 
-	the .NET framework. I implemented this software solution using C#.NET and SQL Server Express in two months.
-  </p>
-</div>
-<br>
-<div class="panel-center-align" id="achievements">
-  <h1 class="h-center">Achievements</h1>
-  <p>
-    Augsburg University - BS Computer Science - 2017
-  </p>
-  <p>
-    Augsburg University - BA Computational Philosophy - 2017
-  </p>
-  <p>
-    Augsburg University - Latin Honors - 2017
-  </p>
-  <p>
-    Augsburg College - URGO Research Grant - 2017
-  </p>
-  <p>
-    Century College - Associate of the Arts - 2013
-  </p>
-</div>
-<br>
-<div class="panel-left-align" id="personal">
-  <h1 class="h-center">Personal</h1>
-  <p>
-    I like a lot of stuff. Almost everything. At some point in the past, I had a realization that I would be unable to literally know
-    everything and do anything. It would appear for myself there simply is not enough time to know all Mathematics,
-    all Physics, all Chemistry, all of Science, all of Philosophy, all of that which gives meaning to humanity; that there is not enough
-    time to see every point on the planet and to have conversations with every one of its inhabitants, that I lack the time to be able
-    to experience all that this planet has to offer. As a result of this realization, I am now doing my best to stay focused on
-    several areas in which I might develop proficiency and demonstrate excellence while simultaneously retaining a curiosity that is inclined
-    to consider the broader and wider fullness that is the human experience. So far it seems like the areas that I have the most drive
-    for are computer science and linguistics, along with camping to keep me anchored in the real world. I am not always convinced that
-    these interests are anything but arbitrary, and there are days where this drive is greater than others. Despite this, I continue along
-    with the subjects that I have thus far chosen to pursue.
-  </p>
-  <div class="half-panel">
-    <p>
-	  For the computer science and linguistics stuff, please do check out the links I have provided in the <a href="#projects">Projects</a>
-      section of this page. For the stuff that anchors me, that perhaps allow me appear a little bit more human than machine, I have included
-      a image browser to the right that shows several of the pictures that I have taken on my journies. The journies that I have included in
-      this image browser are from a trip to the Badlands that I took in 2015 and a trip through the American West that I had undertaken in 2017.
-      Both of these journies pushed my boundaries of self comfort and in doing so expanded my horizons. The next long trip I plan to take is
-      a excursion to Death Valley during the middle of winter when I might actually be able to camp there without an air conditioned tent.
-	</p>
-    <p>
-	  On an average day, you will hopefully find me busy at work or engaged with something stimulating like a book, video game, or my guitar.
-	</p>
-  </div>
-  <div class="half-panel">
-    Content
-  </div>
-</div>
-<br>
-<div class="panel-center-align" id="contact">
-  <h1 class="h-center">Contact Me</h1>
-  <a style="padding:20px">dev@matthewjohnson42.com</a>
-  <img src="images/sep.png" style="height:10px;width:auto;">
-  <a style="padding:20px">C: 651-261-6353</a>
-  <img src="images/sep.png" style="height:10px;width:auto;">
-  <a href="https://www.linkedin.com/in/matthew-johnson-1708a6153/" style="padding:20px" target="_blank">LinkedIn</a>
-  <img src="images/sep.png" style="height:10px;width:auto;">
-  <a href="https://github.com/matthewjohnson42" style="padding:20px" target="_blank">GitHub</a>
-</div>
+<section class="base"></section>
+<section id="home" class="nav">
+    <div class="nav nav-component--outer links-top join-logo component-wrapper">
+        <label for="drop" class="toggle">Menu</label><input type="checkbox" id="drop">
+        <ul class="nav-links nav-logo" style="justify-content: center; color: white">
+            <li><a href="./index.html" class="mdi mdi-">Home</a></li>
+            <li><a href="about.html" class="mdi mdi-">About</a></li>
+            <li><a href="./index.html#contactMe" class="mdi mdi-">Contact</a></li>
+        </ul>
+    </div>
+</section>
+<section class="hero">
+    <div class="component-wrapper
+            hero-component--wrapper-fillscreen">
+        <div class="bg sib  hero-component--fixed-background"
+             style="background-image: url(images/chaoticgraph.jpg);"></div>
+        <div class="hero-component--content">
+            <div class="h-font h1">
+                <div style="text-align: center; color: #ffffff; text-shadow: rgba(0, 0, 0, 1.0) 0px 2px 6px; font-family: Quicksand">
+                    Matthew Johnson
+                </div>
+            </div>
+            <div class="h3 body-text">
+                <div style="text-align: center; color: #ffffff; text-shadow: rgba(0, 0, 0, 1.0) 0px 2px 6px; font-family: Quicksand">
+                    Professional Software Engineer
+                </div>
+            </div>
+        </div>
+        <img id="downarrow" src="./images/downarrow.png" style="max-height:3vmax; position: fixed; bottom:0; display: block; opacity: 0.0;">
+    </div>
+</section>
+<section class="simple">
+    <div class="simple-chord--wrapper component-wrapper">
+        <div class="bg sib"></div>
+        <div class="simple-chord--inner">
+            <div class="h-font h2"><br>Informed Perspective and Dedication<br></div>
+            <div class="simple-chord--text body-text">
+                <div>I am a professional software engineer who is interested in growing into the world of data science.
+                    I contribute to the spaces in which I work by providing the insights of an analytical mind,
+                    leveraged to whatever task is being undertaken by the team. The areas in which I can provide an
+                    informed perspective and insight are in the areas of software development and technical writing. I
+                    am always interested to learn more and have a proven track record of being able to provide self
+                    instruction for the development of competency sufficient for meeting goals set.<br><br></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="photo">
+    <div class="photo component-wrapper" style="flex-direction: row-reverse">
+        <div class="bg sib " style="background-color: #aaaaaa;"></div>
+        <div class="photo-text">
+            <div>
+                <div class="h2 h-font">Data Analysis</div>
+                <div class="body-text">I have experience with performing analysis on raw scientific data. <br><br>On the
+                    Magnetometer Array for Cusp and Cleft Studies project at Augsburg College, I worked with the physics
+                    department to define anomalies within geomagnetic data and created a deep neural network to identify
+                    such anomalies. The repo containing the model for this neural network may be found <a
+                            href="https://bitbucket.org/eriksteinmetzataugsburg/basneuralnetwork">here</a>.<br></div>
+            </div>
+        </div>
+        <div class="photo-component--photo" style="opacity:.75;">
+            <div class="photo-photo bg" style="background-image: url(images/graph.jpg);"></div>
+        </div>
+    </div>
+</section>
+<section class="simple">
+    <div class="simple-chord--wrapper component-wrapper"></div>
+</section>
+<section class="photo">
+    <div class="photo component-wrapper" style="background-color: #aaaaaa;">
+        <div class="photo-text">
+            <div>
+                <div class="h2 h-font">Research</div>
+                <div class="body-text">I have experience performing independent research with limited to no
+                    guidance.<br><br>In addition to the <a href="./docs/MACCSPaper.pdf">MACCS research</a> listed above, I performed an academic survey of
+                    the field of Natural Language Processing with guidance from Professor Erik Steinmetz. The paper I
+                    wrote detailing this survey can be found
+                    <a href="https://github.com/matthewjohnson42/sentiment-analysis/blob/master/documentation/paper/study-ontology-supported-sentiment-analysis.pdf">
+                        here</a>.<br><br>As part of my own interests, I have continued to study natural language
+                    processing. See my <a href="https://github.com/matthewjohnson42/sentiment-analysis">GitHub repo</a>
+                    for my experimentation with natural language processing.<br></div>
+            </div>
+        </div>
+        <div class="photo-component--photo">
+            <div class="photo-photo bg " style="background-image: url(images/books.jpg);"></div>
+        </div>
+    </div>
+</section>
+<section class="simple">
+    <div class="simple-chord--wrapper component-wrapper"></div>
+</section>
+<section class="photo">
+    <div class="photo component-wrapper" style="flex-direction: row-reverse; background-color: #bbbbbb;">
+        <div class="photo-text">
+            <div>
+                <div class="h2 h-font">Java</div>
+                <div class="body-text">I have experience writing Java programs. <br><br>Currently this includes limited
+                    experience writing web services using the Springboot framework, along with use of Java core
+                    libraries for creating software such as <a
+                            href="https://bitbucket.org/APublicFacingUsername/johnsonmatthew-compiler">compilers</a>.
+                </div>
+            </div>
+        </div>
+        <div class="photo-component--photo">
+            <div class="photo-photo bg" style="background-image: url(images/java.jpeg);"></div>
+        </div>
+    </div>
+</section>
+<section class="simple">
+    <div class="simple-chord--wrapper component-wrapper"></div>
+</section>
+<section class="simple">
+    <div class="simple-chord--wrapper component-wrapper" style="background-color: #ffefe8">
+        <div class="simple-chord--inner">
+            <div class="h-font h2">Contact Me</div>
+            <div class="simple-chord--text body-text">
+                <div>
+                    <a href="mailto:dev@matthewjohnson42.com"></a>dev@matthewjohnson42.com<br><br>(651)-261-6353
+                    <br><br>277 Wilder Street #C<br>Saint Paul, MN 55104<br></div>
+                <div>Please feel free to reach out to me to start a conversation via email, text message, or by
+                    engaging with me on GitHub or LinkedIn as linked below. Phone calls may not be returned in a timely
+                    manner. Resume available on request.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contactMe" class="footer-new">
+    <div class="footer footer-component--outer component-wrapper">
+        <div class="footer-component--inner">
+            <div class="links">
+                <a href="https://github.com/matthewjohnson42" target="_blank" class="color-black mdi mdi-github-circle"
+                   style="white-space:nowrap; padding-right:10%;">GitHub</a>
+                <a href="https://www.linkedin.com/in/matthew-johnson-1708a6153/" target="_blank"
+                   class="color-black mdi mdi-linkedin-box" style="white-space:nowrap; padding-left: 10%;">LinkedIn</a>
+            </div>
+            <div style="text-align: center;">
+                <a href="./index.html#home" style="white-space: nowrap; padding-right: 1em">Home (top of page)</a>
+                <a href="./about.html" style="white-space: nowrap; padding-left: 1em">About</a>
+            </div>
+            <div style="text-align: center;">© 2019 Matthew David Johnson</div>
+        </div>
+        <br>
+    </div>
+</section>
 </body>
-
 </html>
