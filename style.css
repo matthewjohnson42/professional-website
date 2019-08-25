@@ -1698,3 +1698,8 @@ div.footer-component--inner>div.links {
     justify-content: space-evenly;
     font-size: 2em
 }
+
+a.simple {
+    text-decoration: none;
+    color: #bbbbbb;
+}
