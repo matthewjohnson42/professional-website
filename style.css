@@ -1699,7 +1699,10 @@ div.footer-component--inner>div.links {
     font-size: 2em
 }
 
-a.simple {
-    text-decoration: none;
+a.tan {
     color: #bbbbbb;
+}
+
+a.darkblue {
+    color: #0000c3;
 }
