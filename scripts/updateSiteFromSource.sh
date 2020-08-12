@@ -6,8 +6,7 @@ echo "--------------------------------"
 echo
 
 if [ -z ${PERSONAL_WEBSITE_HOME} ]; then
-  echo "Error: No website source directory specified"
-  exit 1
+  PERSONAL_WEBSITE_HOME=/home/ubuntu/personal-website
 fi
 
 if [ -z ${NGINX_HTTP_HOME_DIR} ]; then
