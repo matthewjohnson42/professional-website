@@ -20,18 +20,21 @@
         const fadeRange = 55
         const fadeTimeLB = 4000
         const fadeTimeUB = 5000
-        window.onscroll = function() {displayReturnToTop()};
-        window.setInterval(function(){
+        window.onscroll = function () {
+            displayReturnToTop()
+        };
+        window.setInterval(function () {
             var timeFromLoad = Date.now() - pageLoad
-            if(timeFromLoad > fadeTimeLB && timeFromLoad < fadeTimeUB && document.documentElement.scrollTop < fadeRange){
+            if (timeFromLoad > fadeTimeLB && timeFromLoad < fadeTimeUB && document.documentElement.scrollTop < fadeRange) {
                 document.getElementById("downarrow").style.opacity = (timeFromLoad - 4000) * .001
             }
         })
-        function displayReturnToTop(){
+
+        function displayReturnToTop() {
             var timeFromLoad = Date.now() - pageLoad
             if (timeFromLoad > fadeTimeUB && document.documentElement.scrollTop < fadeRange && !hasMovedOutOfRange) {
-                document.getElementById("downarrow").style.opacity = (fadeRange - document.documentElement.scrollTop) * (1/fadeRange)
-            } else if (document.documentElement.scrollTop >= fadeRange ) {
+                document.getElementById("downarrow").style.opacity = (fadeRange - document.documentElement.scrollTop) * (1 / fadeRange)
+            } else if (document.documentElement.scrollTop >= fadeRange) {
                 document.getElementById("downarrow").style.display = "none";
                 hasMovedOutOfRange = true;
             }
@@ -69,7 +72,8 @@
                 </div>
             </div>
         </div>
-        <img id="downarrow" src="./images/downarrow.png" style="max-height:3vmax; position: fixed; bottom:0; display: block; opacity: 0.0;">
+        <img id="downarrow" src="./images/downarrow.png"
+             style="max-height:3vmax; position: fixed; bottom:0; display: block; opacity: 0.0;">
     </div>
 </section>
 <section class="simple">
@@ -78,31 +82,32 @@
         <div class="simple-chord--inner">
             <div class="h-font h2"><br>Informed Perspective and Dedication<br></div>
             <div class="simple-chord--text body-text">
-                <div>I am a software developer in the web development domain who is interested in growing into the world
-                    of data science. I contribute to the spaces in which I work by providing the insights of an analytical mind,
-                    leveraged to whatever task is being undertaken by the team. The areas in which I can provide an
-                    informed perspective are in the areas of
+                <div>I am a software developer in the web development domain who is interested in expanding my skill set
+                    into the areas of Machine Learning and Natural Language Processing. I contribute to the spaces in which
+                    I work by providing the insights of an analytical mind, leveraged to whatever task is being undertaken
+                    by the team. The areas in which I can provide an informed perspective are in the areas of
                     <a href="https://github.com/matthewjohnson42" class="tan">software development</a> and
                     <a href="./docs" class="tan">technical writing</a>. I aspire to continuously gain knowledge, be it
                     of languages, frameworks, code bases, or underlying technical infrastructure.
+                </div>
             </div>
         </div>
-    </div>
 </section>
 <section class="photo">
-    <div class="photo component-wrapper" style="flex-direction: row-reverse; background-color: #bbbbbb;">
+    <div class="photo component-wrapper" style="flex-direction: row-reverse; background-color: #aaaaaa;">
         <div class="photo-text">
-          <div>
-            <div class="h2 h-font">Java</div>
-              <div class="body-text">I have experience writing Java programs.</div>
-              <div class="body-text">I have contributed to REST and query-based
-                  <a href="https://github.com/matthewjohnson42/personal-memex-service" class="darkblue">web services</a>
-                using the Springboot framework in micro-service and micro-service/monolith hybrid environments.
+            <div>
+                <div class="h2 h-font">Java</div>
+                <div class="body-text">I have experience writing Java programs.</div>
+                <div class="body-text">I have contributed to REST and query-based
+                    <a href="https://github.com/matthewjohnson42/personal-memex-service" class="darkblue">web
+                        services</a>
+                    using the Springboot framework in micro-service and micro-service/monolith hybrid environments.
+                </div>
             </div>
-          </div>
         </div>
         <div class="photo-component--photo">
-            <div class="photo-photo bg" style="background-image: url(images/java.jpeg);"></div>
+            <div class="photo-photo bg" style="background-image: url(images/java2.jpeg); min-height: 800px;"></div>
         </div>
     </div>
 </section>
@@ -110,20 +115,22 @@
     <div class="simple-chord--wrapper component-wrapper"></div>
 </section>
 <section class="photo">
-    <div class="photo component-wrapper">
-        <div class="bg sib " style="background-color: #aaaaaa;"></div>
+    <div class="photo component-wrapper" style="background-color: #aaaaaa;">
         <div class="photo-text">
             <div>
                 <div class="h2 h-font">Angular</div>
                 <div class="body-text">
-                    I have experience with writing <a href="https://github.com/matthewjohnson42/personal-memex-ui" class="darkblue">Angular</a>.</div>
+                    I have experience with writing <a href="https://github.com/matthewjohnson42/personal-memex-ui"
+                                                      class="darkblue">Angular</a>.
+                </div>
                 <div class="body-text">
-                    I have worked on maintaining and adding new features to single page web apps using the Angular language in a professional environment.
+                    I have worked on maintaining and adding new features to single page web apps using the Angular
+                    language in a professional environment.
                 </div>
             </div>
         </div>
-        <div class="photo-component--photo" style="opacity:.75; transform: scale(.75);">
-            <div class="photo-photo bg" style="background-image: url(images/angular-logo-blk.png);"></div>
+        <div class="photo-component--photo">
+            <img src="images/angular-logo-blk.png" style="opacity:.75;transform: scale(.8);">
         </div>
     </div>
 </section>
@@ -137,15 +144,15 @@
                 <div class="h2 h-font">CICD</div>
                 <div class="body-text">I have experience working with CICD systems.</div>
                 <div class="body-text">
-                    I have written Jenkins Job DSL and bash scripts to automate DevOps tasks in a professional setting, including
-                    tasks such freezing software releases.
-                    I have also supported existing Jenkins jobs that test, merge, and deploy stories and defects on a major
-                    internal software application.
+                    I have written Jenkins Job DSL and bash scripts to automate DevOps tasks in a professional setting,
+                    including tasks such as freezing software releases of a major internal software application. I have
+                    also supported existing Jenkins jobs that test and deploy stories and defects to various software
+                    environments, including pre production and post production environments.
                 </div>
             </div>
         </div>
         <div class="photo-component--photo">
-            <div class="photo-photo bg " style="background-image: url(images/circle.png);"></div>
+            <img src="images/circle.png" style="transform: scale(.8);">
         </div>
     </div>
 </section>

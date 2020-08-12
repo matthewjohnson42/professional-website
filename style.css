@@ -1596,14 +1596,12 @@ div.testimonials-component--each-inner {
 
 div.photo {
     display: flex;
-    flex-wrap: wrap;
     line-height: 1.9;
-    min-height: 800px;
     padding: 0
 }
 
 div.photo div.photo-component--photo {
-    flex: 1 1 50%;
+    flex: 1 1;
     min-height: 30rem;
     min-width: 300px
 }
@@ -1613,7 +1611,7 @@ div.photo-photo {
 }
 
 div.photo div.photo-text {
-    flex: 1 0 300px;
+    flex: 1 0;
     display: flex;
     justify-content: center;
     padding: 3rem 0;

@@ -96,5 +96,8 @@ echo "--------"
 echo "COMPLETE"
 echo "--------"
 echo
-echo "Run \`crontab -e\` and enter the following record to set up auto renewal"
-echo "0 23 * * 6 /usr/bin/certbot renew --post-hook \"nginx -s reload\""
+echo "Run \`crontab -e\` and enter the following record to set up auto renewal:"
+echo
+echo "0 23 * * * sudo /usr/bin/certbot renew --post-hook \"nginx -s reload\""
+echo
+echo
