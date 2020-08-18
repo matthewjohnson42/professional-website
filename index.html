@@ -43,7 +43,7 @@
 </head>
 
 <body class="home page-template-default page" style="background-color:black;">
-<!-- TODO update flex boxes to wrap correctly for mobile -->
+<!-- TODO update flex boxes to wrap correctly for mobile https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp -->
 <!-- TODO update background image at head of page to be tan/red/brown color base -->
 <section class="base"></section>
 <section id="home" class="nav">
@@ -60,7 +60,9 @@
     <div class="component-wrapper
             hero-component--wrapper-fillscreen">
         <div class="bg sib  hero-component--fixed-background"
-             style="background-image: url(images/chaoticgraph.jpg);"></div>
+             style="background-image: url(images/wood.jpg);">
+            <!-- photo credit to Rocky Mountain Reclaimed Lumber -->
+        </div>
         <div class="hero-component--content">
             <div class="h-font h1">
                 <div style="text-align: center; color: #ffffff; text-shadow: rgba(0, 0, 0, 1.0) 0px 2px 6px; font-family: Quicksand">
@@ -108,7 +110,8 @@
             </div>
         </div>
         <div class="photo-component--photo">
-            <div class="photo-photo bg" style="background-image: url(images/java2.jpeg); min-height: 800px;"></div>
+<!--            <div class="photo-photo bg" style="background-image: url(images/java2.jpeg); min-height: 800px;"></div>-->
+            <img src="images/java2.jpeg" style="min-height: 800px;">
         </div>
     </div>
 </section>
@@ -179,10 +182,12 @@
     <div class="footer footer-component--outer component-wrapper">
         <div class="footer-component--inner">
             <div class="links">
-                <a href="https://github.com/matthewjohnson42" target="_blank" class="color-black mdi mdi-github-circle"
-                   style="white-space:nowrap; padding-right:10%;">GitHub</a>
                 <a href="https://www.linkedin.com/in/matthew-johnson-1708a6153/" target="_blank"
-                   class="color-black mdi mdi-linkedin-box" style="white-space:nowrap; padding-left: 10%;">LinkedIn</a>
+                   class="color-black mdi mdi-linkedin-box" style="white-space:nowrap; padding-left: 10%; padding-right:10%;">LinkedIn</a>
+                <a href="https://github.com/matthewjohnson42" target="_blank" class="color-black mdi mdi-github-circle"
+                   style="white-space:nowrap; padding-left: 10%; padding-right:10%;">GitHub</a>
+                <a href="https://www.hackerrank.com/matthewjohnson42" target="_blank" class="color-black mdi mdi-web"
+                   style="white-space:nowrap; padding-left:10%;">HackerRank</a>
             </div>
             <div style="text-align: center;">
                 <a href="./index.html#home" style="white-space: nowrap; padding-right: 1em">Home (top of page)</a>
