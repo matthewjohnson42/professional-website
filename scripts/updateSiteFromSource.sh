@@ -6,7 +6,7 @@ echo "--------------------------------"
 echo
 
 if [ -z ${PERSONAL_WEBSITE_HOME} ]; then
-  PERSONAL_WEBSITE_HOME=/home/ubuntu/personal-website
+  export PERSONAL_WEBSITE_HOME=/home/ubuntu/personal-website
 fi
 
 if [ -z ${NGINX_HTTP_HOME_DIR} ]; then
