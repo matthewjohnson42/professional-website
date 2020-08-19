@@ -18,15 +18,15 @@
         const pageLoad = Date.now();
         let hasMovedOutOfRange = false;
         const fadeRange = 55
-        const fadeTimeLB = 4000
-        const fadeTimeUB = 5000
+        const fadeTimeLB = 1000
+        const fadeTimeUB = 2000
         window.onscroll = function () {
             displayReturnToTop()
         };
         window.setInterval(function () {
             var timeFromLoad = Date.now() - pageLoad
             if (timeFromLoad > fadeTimeLB && timeFromLoad < fadeTimeUB && document.documentElement.scrollTop < fadeRange) {
-                document.getElementById("downarrow").style.opacity = (timeFromLoad - 4000) * .001
+                document.getElementById("downarrow").style.opacity = (timeFromLoad - 1000) * .001
             }
         })
 
