@@ -20,6 +20,7 @@
             document.getElementById("load-wrapper-horiz-center").style = "display:none;"
             document.getElementById("body-wrapper").style = "";
             fadeArrow();
+            prefetchResources();
         };
         // handle display of a down arrow to indicate to the user that they can scroll down.
         function fadeArrow() {
@@ -48,6 +49,32 @@
                     document.getElementById("downarrow").style.display = "none";
                     hasMovedOutOfRange = true;
                 }
+            }
+        }
+        // prefetch the about page
+        function prefetchResources() {
+            getResources(["/images/travel18.jpg", "/about.html"]);
+        }
+        function getResources(resourcePaths) {
+            const currentLoc = getLocation(window.location.href);
+            for (let i = 0; i < resourcePaths.length; i++) {
+                let imageUrl = currentLoc.protocol + "//" + currentLoc.host + resourcePaths[i];
+                let request = new XMLHttpRequest();
+                request.open("GET", imageUrl, true);
+                request.send(null);
+            }
+        }
+        function getLocation(href) {
+            let match = href.match(/^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);
+            return match && {
+                href: href,
+                protocol: match[1],
+                host: match[2],
+                hostname: match[3],
+                port: match[4],
+                pathname: match[5],
+                query: match[6],
+                hash: match[7]
             }
         }
     </script>
