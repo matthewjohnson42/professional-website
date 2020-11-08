@@ -14,15 +14,6 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-/* If you are reading this, I apologize for 1700 lines of CSS. In the interest of time, I am building on the work of
-others. The base of this work was generated using the Remixer website builder offered by the web hosting company I pay
-for the services of (dreamhost), and its current form was created by exporting the built web page to WordPress.
-
-I tend to cannibalize CSS, preferring adaptation of templates over writing it from the ground up. For a ground up CSS
-approach I took prior to becoming exposed to professional web development, see:
-https://matthewjohnson42.com/old_index.html
--- Matthew Johnson */
-
 html {
     line-height: 1.15;
     -ms-text-size-adjust: 100%;
@@ -286,9 +277,38 @@ a {
     text-decoration: none
 }
 
+a.tan {
+    color: #bbbbbb;
+}
+
+a.darkblue {
+    color: #0000c3;
+}
+
 a:hover {
     color: #666;
     text-decoration: underline
+}
+
+a.linked-in-link, a.github-link {
+    white-space:nowrap;
+    padding-left: 10%;
+    padding-right:10%;
+}
+
+a.hacker-rank-link {
+    white-space:nowrap;
+    padding-left:10%;
+}
+
+a.footer-links-start {
+    white-space: nowrap;
+    padding-right: 1em;
+}
+
+a.footer-links-end {
+    white-space: nowrap;
+    padding-left: 1em;
 }
 
 abbr[title] {
@@ -1035,6 +1055,57 @@ button,
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225)
 }
 
+.img-down-arrow {
+    max-height:3vmax;
+    position: fixed;
+    bottom:0;
+    display: block;
+    opacity: 0.0;
+}
+
+.img-angular-logo {
+    opacity:.75;
+    transform: scale(.8);
+}
+
+.img-cicd-circle {
+    transform: scale(.8);
+}
+
+.img-java {
+    min-height:800px;
+}
+
+.ani-loading-spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+.loading-spinner-wrapper-horiz-center {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loading-spinner-wrapper-vert-center {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .filter-img.imgFilterJelly:before {
     border-radius: 5px
 }
@@ -1272,6 +1343,13 @@ div.body-text2 {
     line-height: 2.0;
 }
 
+div.title-text {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: rgba(0, 0, 0, 1.0) 0px 2px 6px;
+    font-family: Quicksand;
+}
+
 body {
     line-height: 2
 }
@@ -1293,6 +1371,10 @@ section:nth-child(odd) {
 section:nth-child(even) {
     background-color: #3f3f3f;
     color: white
+}
+
+body.home {
+    background-color:black;
 }
 
 div.footer,
@@ -1348,6 +1430,11 @@ div.links-top {
     display: flex;
     flex-direction: column;
     justify-content: center
+}
+
+div.links-white-center {
+    justify-content: center;
+    color: white;
 }
 
 ul.nav-links {
@@ -1601,6 +1688,15 @@ div.photo {
     padding: 0
 }
 
+div.photo-wrapper-1 {
+    flex-direction: row-reverse;
+    background-color: #aaaaaa;
+}
+
+div.photo-wrapper-2 {
+    background-color: #aaaaaa;
+}
+
 div.photo div.photo-component--photo {
     flex: 1 1;
     min-height: 30rem;
@@ -1645,6 +1741,12 @@ div.photo2 div.photo-text {
     min-width: 300px
 }
 
+div.about-photo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 div.simple-chord--wrapper {
     padding: 3rem 0;
     min-height: 10em
@@ -1681,6 +1783,10 @@ div.map-iframe-wrapper {
     line-height: 0
 }
 
+div.about-me-wrapper {
+    background-color: #ffefe8;
+}
+
 div.footer-component--outer {
     padding: 4em 0
 }
@@ -1698,16 +1804,6 @@ div.footer-component--inner>div.links {
     font-size: 2em
 }
 
-a.tan {
-    color: #bbbbbb;
-}
-
-a.darkblue {
-    color: #0000c3;
-}
-
-div.about-photo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+div.footer-element {
+    text-align: center;
 }

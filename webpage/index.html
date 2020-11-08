@@ -16,8 +16,8 @@
     <script>
         // handle page load
         function handlePageLoad() {
-            document.getElementById("load-wrapper-horiz-center").style = "display:none;"
-            document.getElementById("body-wrapper").style = "";
+            document.getElementById("loading-spinner-wrapper").style.display = "none"
+            document.getElementById("body-wrapper").style.display = "";
             fadeArrow();
             prefetchResources();
         };
@@ -77,43 +77,12 @@
             }
         }
     </script>
-    <style>
-        #loading-spinner {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-            -webkit-animation: spin 1s ease-in-out infinite;
-        }
-        @keyframes spin {
-            to { -webkit-transform: rotate(360deg); }
-        }
-        @-webkit-keyframes spin {
-            to { -webkit-transform: rotate(360deg); }
-        }
-        #load-wrapper-horiz-center {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        #load-wrapper-vert-center {
-            height: 100vh;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-    </style>
 </head>
 
-<body class="home page-template-default page" style="background-color:black;" onload="handlePageLoad()">
-<div id="load-wrapper-horiz-center">
-    <div id="load-wrapper-vert-center">
-        <div id="loading-spinner"></div>
+<body class="home page-template-default page" onload="handlePageLoad()">
+<div id="loading-spinner-wrapper" class="loading-spinner-wrapper-horiz-center">
+    <div class="loading-spinner-wrapper-vert-center">
+        <div class="ani-loading-spinner"></div>
     </div>
 </div>
 <div id="body-wrapper" style="display:none;">
@@ -121,7 +90,7 @@
     <section id="home" class="nav">
         <div class="nav nav-component--outer links-top join-logo component-wrapper">
             <label for="drop" class="toggle">Menu</label><input type="checkbox" id="drop">
-            <ul class="nav-links nav-logo" style="justify-content: center; color: white">
+            <ul class="nav-links nav-logo" style="justify-content: center;">
                 <li><a href="./index.html" class="mdi mdi-">Home</a></li>
                 <li><a href="about.html" class="mdi mdi-">About</a></li>
                 <li><a href="./index.html#contactMe" class="mdi mdi-">Contact</a></li>
@@ -131,24 +100,23 @@
     <section class="hero">
         <div class="component-wrapper
             hero-component--wrapper-fillscreen">
-            <div class="bg sib  hero-component--fixed-background"
+            <div class="bg sib hero-component--fixed-background"
                  style="background-image: url(images/wood.jpg);">
                 <!-- photo credit to Rocky Mountain Reclaimed Lumber -->
             </div>
             <div class="hero-component--content">
                 <div class="h-font h1">
-                    <div style="text-align: center; color: #ffffff; text-shadow: rgba(0, 0, 0, 1.0) 0px 2px 6px; font-family: Quicksand">
+                    <div class="title-text">
                         Matthew Johnson
                     </div>
                 </div>
                 <div class="h3 body-text">
-                    <div style="text-align: center; color: #ffffff; text-shadow: rgba(0, 0, 0, 1.0) 0px 2px 6px; font-family: Quicksand">
+                    <div class="title-text">
                         Software Developer
                     </div>
                 </div>
             </div>
-            <img id="downarrow" src="images/downarrow.png"
-                 style="max-height:3vmax; position: fixed; bottom:0; display: block; opacity: 0.0;">
+            <img id="downarrow" src="images/downarrow.png" class="img-down-arrow">
         </div>
     </section>
     <section class="simple">
@@ -169,7 +137,7 @@
             </div>
     </section>
     <section class="photo">
-        <div class="photo component-wrapper" style="flex-direction: row-reverse; background-color: #aaaaaa;">
+        <div class="photo photo-wrapper-1 component-wrapper">
             <div class="photo-text">
                 <div>
                     <div class="h2 h-font">Java</div>
@@ -182,7 +150,7 @@
                 </div>
             </div>
             <div class="photo-component--photo">
-                <img src="images/java3.jpeg" style="min-height:800px">
+                <img src="images/java3.jpeg">
             </div>
         </div>
     </section>
@@ -190,7 +158,7 @@
         <div class="simple-chord--wrapper component-wrapper"></div>
     </section>
     <section class="photo">
-        <div class="photo component-wrapper" style="background-color: #aaaaaa;">
+        <div class="photo photo-wrapper-2 component-wrapper">
             <div class="photo-text">
                 <div>
                     <div class="h2 h-font">Angular</div>
@@ -205,7 +173,7 @@
                 </div>
             </div>
             <div class="photo-component--photo">
-                <img src="images/angular-logo-blk.png" style="opacity:.75;transform: scale(.8);">
+                <img src="images/angular-logo-blk.png" class="img-angular-logo">
             </div>
         </div>
     </section>
@@ -213,7 +181,7 @@
         <div class="simple-chord--wrapper component-wrapper"></div>
     </section>
     <section class="photo">
-        <div class="photo component-wrapper" style="flex-direction: row-reverse; background-color: #aaaaaa;">
+        <div class="photo photo-wrapper-1 component-wrapper">
             <div class="photo-text">
                 <div>
                     <div class="h2 h-font">CICD</div>
@@ -227,7 +195,7 @@
                 </div>
             </div>
             <div class="photo-component--photo">
-                <img src="images/circle.png" style="transform: scale(.8);">
+                <img src="images/circle.png" class="img-cicd-circle">
             </div>
         </div>
     </section>
@@ -235,7 +203,7 @@
         <div class="simple-chord--wrapper component-wrapper"></div>
     </section>
     <section class="simple" id="contactMe">
-        <div class="simple-chord--wrapper component-wrapper" style="background-color: #ffefe8">
+        <div class="simple-chord--wrapper component-wrapper about-me-wrapper">
             <div class="simple-chord--inner">
                 <div class="h-font h2">Contact Me</div>
                 <div class="simple-chord--text body-text">
@@ -254,17 +222,17 @@
             <div class="footer-component--inner">
                 <div class="links">
                     <a href="https://www.linkedin.com/in/matthew-johnson-1708a6153/" target="_blank"
-                       class="color-black mdi mdi-linkedin-box" style="white-space:nowrap; padding-left: 10%; padding-right:10%;">LinkedIn</a>
-                    <a href="https://github.com/matthewjohnson42" target="_blank" class="color-black mdi mdi-github-circle"
-                       style="white-space:nowrap; padding-left: 10%; padding-right:10%;">GitHub</a>
-                    <a href="https://www.hackerrank.com/matthewjohnson42" target="_blank" class="color-black mdi mdi-web"
-                       style="white-space:nowrap; padding-left:10%;">HackerRank</a>
+                       class="color-black mdi mdi-linkedin-box linked-in-link">LinkedIn</a>
+                    <a href="https://github.com/matthewjohnson42" target="_blank"
+                       class="color-black mdi mdi-github-circle github-link">GitHub</a>
+                    <a href="https://www.hackerrank.com/matthewjohnson42" target="_blank"
+                       class="color-black mdi mdi-web hacker-rank-link">HackerRank</a>
                 </div>
-                <div style="text-align: center;">
-                    <a href="./index.html#home" style="white-space: nowrap; padding-right: 1em">Home (top of page)</a>
-                    <a href="about.html" style="white-space: nowrap; padding-left: 1em">About</a>
+                <div class="footer-element">
+                    <a href="./index.html#home" class="footer-links-start">Home (top of page)</a>
+                    <a href="about.html" class="footer-links-end">About</a>
                 </div>
-                <div style="text-align: center;">© 2020 Matthew David Johnson</div>
+                <div class="footer-element">© 2020 Matthew David Johnson</div>
             </div>
             <br>
         </div>
