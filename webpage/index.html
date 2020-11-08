@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US" class="js no-svg">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="source-code" content="https://github.com/matthewjohnson42/personal-website">
+    <link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.9.1/baguetteBox.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="images/quicksand.woff" rel="preload" as="font">
+    <link href="images/roboto.woff2" rel="preload" as="font">
+    <link href="images/wood.jpg" rel="preload" as="image">
+    <link href="images/favicon.ico" rel="icon" type="image/png">
+    <link href="about.html" rel="prerender">
+    <title>Matthew Johnson</title>
+    <script>
+        // handle page load
+        function handlePageLoad() {
+            document.getElementById("load-wrapper-horiz-center").style = "display:none;"
+            document.getElementById("body-wrapper").style = "";
+            fadeArrow();
+        };
+        // handle display of a down arrow to indicate to the user that they can scroll down.
+        function fadeArrow() {
+            const pageLoad = Date.now();
+            let hasMovedOutOfRange = false;
+            const fadeRange = 55;
+            const fadeTimeLB = 1000;
+            const fadeTimeUB = 2000;
+            window.setInterval(function () {
+                fadeIn();
+            });
+            window.onscroll = function () {
+                fadeAway();
+            };
+            function fadeIn() {
+                const timeFromLoad = Date.now() - pageLoad
+                if (timeFromLoad > fadeTimeLB && timeFromLoad < fadeTimeUB && document.documentElement.scrollTop < fadeRange) {
+                    document.getElementById("downarrow").style.opacity = (timeFromLoad - 1000) * .001;
+                }
+            }
+            function fadeAway() {
+                const timeFromLoad = Date.now() - pageLoad;
+                if (timeFromLoad > fadeTimeUB && document.documentElement.scrollTop < fadeRange && !hasMovedOutOfRange) {
+                    document.getElementById("downarrow").style.opacity = (fadeRange - document.documentElement.scrollTop) * (1 / fadeRange);
+                } else if (document.documentElement.scrollTop >= fadeRange) {
+                    document.getElementById("downarrow").style.display = "none";
+                    hasMovedOutOfRange = true;
+                }
+            }
+        }
+    </script>
+    <style>
+        #loading-spinner {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            -webkit-animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { -webkit-transform: rotate(360deg); }
+        }
+        @-webkit-keyframes spin {
+            to { -webkit-transform: rotate(360deg); }
+        }
+        #load-wrapper-horiz-center {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #load-wrapper-vert-center {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body class="home page-template-default page" style="background-color:black;" onload="handlePageLoad()">
+<div id="load-wrapper-horiz-center">
+    <div id="load-wrapper-vert-center">
+        <div id="loading-spinner"></div>
+    </div>
+</div>
+<div id="body-wrapper" style="display:none;">
+    <section class="base"></section>
+    <section id="home" class="nav">
+        <div class="nav nav-component--outer links-top join-logo component-wrapper">
+            <label for="drop" class="toggle">Menu</label><input type="checkbox" id="drop">
+            <ul class="nav-links nav-logo" style="justify-content: center; color: white">
+                <li><a href="./index.html" class="mdi mdi-">Home</a></li>
+                <li><a href="about.html" class="mdi mdi-">About</a></li>
+                <li><a href="./index.html#contactMe" class="mdi mdi-">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="component-wrapper
+            hero-component--wrapper-fillscreen">
+            <!-- img element to flag the background image as a page resource -->
+            <div class="bg sib  hero-component--fixed-background"
+                 style="background-image: url(images/wood.jpg);">
+                <!-- photo credit to Rocky Mountain Reclaimed Lumber -->
+            </div>
+            <div class="hero-component--content">
+                <div class="h-font h1">
+                    <div style="text-align: center; color: #ffffff; text-shadow: rgba(0, 0, 0, 1.0) 0px 2px 6px; font-family: Quicksand">
+                        Matthew Johnson
+                    </div>
+                </div>
+                <div class="h3 body-text">
+                    <div style="text-align: center; color: #ffffff; text-shadow: rgba(0, 0, 0, 1.0) 0px 2px 6px; font-family: Quicksand">
+                        Software Developer
+                    </div>
+                </div>
+            </div>
+            <img id="downarrow" src="images/downarrow.png"
+                 style="max-height:3vmax; position: fixed; bottom:0; display: block; opacity: 0.0;">
+        </div>
+    </section>
+    <section class="simple">
+        <div class="simple-chord--wrapper component-wrapper">
+            <div class="bg sib"></div>
+            <div class="simple-chord--inner">
+                <div class="h-font h2"><br>Informed Perspective and Dedication<br></div>
+                <div class="simple-chord--text body-text">
+                    <div>I am a software developer in the web development domain who is interested in expanding my skill set
+                        into the areas of Machine Learning and Natural Language Processing. I contribute to the spaces in which
+                        I work by providing the insights of an analytical mind, leveraged to whatever task is being undertaken
+                        by the team. The areas in which I can provide an informed perspective are in the areas of
+                        <a href="https://github.com/matthewjohnson42" class="tan">software development</a>, development operations,
+                        and <a href="docs" class="tan">technical writing</a>. I aspire to continuously gain knowledge, be it
+                        of languages, frameworks, code bases, or underlying technical infrastructure.
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="photo">
+        <div class="photo component-wrapper" style="flex-direction: row-reverse; background-color: #aaaaaa;">
+            <div class="photo-text">
+                <div>
+                    <div class="h2 h-font">Java</div>
+                    <div class="body-text">I have experience writing Java programs.</div>
+                    <div class="body-text">I have contributed to REST and query-based
+                        <a href="https://github.com/matthewjohnson42/personal-memex-service" class="darkblue">web
+                            services</a>
+                        using the Springboot framework in micro-service and micro-service/monolith hybrid environments.
+                    </div>
+                </div>
+            </div>
+            <div class="photo-component--photo">
+                <!--            <div class="photo-photo bg" style="background-image: url(images/java2.jpeg); min-height: 800px;"></div>-->
+                <img src="images/java2.jpeg" style="min-height:800px">
+            </div>
+        </div>
+    </section>
+    <section class="simple">
+        <div class="simple-chord--wrapper component-wrapper"></div>
+    </section>
+    <section class="photo">
+        <div class="photo component-wrapper" style="background-color: #aaaaaa;">
+            <div class="photo-text">
+                <div>
+                    <div class="h2 h-font">Angular</div>
+                    <div class="body-text">
+                        I have experience with writing <a href="https://github.com/matthewjohnson42/personal-memex-ui"
+                                                          class="darkblue">Angular</a>.
+                    </div>
+                    <div class="body-text">
+                        I have worked on maintaining and adding new features to single page web apps using the Angular
+                        language in a professional environment.
+                    </div>
+                </div>
+            </div>
+            <div class="photo-component--photo">
+                <img src="images/angular-logo-blk.png" style="opacity:.75;transform: scale(.8);">
+            </div>
+        </div>
+    </section>
+    <section class="simple">
+        <div class="simple-chord--wrapper component-wrapper"></div>
+    </section>
+    <section class="photo">
+        <div class="photo component-wrapper" style="flex-direction: row-reverse; background-color: #aaaaaa;">
+            <div class="photo-text">
+                <div>
+                    <div class="h2 h-font">CICD</div>
+                    <div class="body-text">I have experience working with CICD systems.</div>
+                    <div class="body-text">
+                        I have written Jenkins Job DSL and bash scripts to automate DevOps tasks in a professional setting,
+                        including tasks such as freezing software releases of a major internal software application. I have
+                        also supported existing Jenkins jobs that test and deploy stories and defects to various software
+                        environments, including pre production and post production environments.
+                    </div>
+                </div>
+            </div>
+            <div class="photo-component--photo">
+                <img src="images/circle.png" style="transform: scale(.8);">
+            </div>
+        </div>
+    </section>
+    <section class="simple">
+        <div class="simple-chord--wrapper component-wrapper"></div>
+    </section>
+    <section class="simple" id="contactMe">
+        <div class="simple-chord--wrapper component-wrapper" style="background-color: #ffefe8">
+            <div class="simple-chord--inner">
+                <div class="h-font h2">Contact Me</div>
+                <div class="simple-chord--text body-text">
+                    <div>
+                        <a href="mailto:dev@matthewjohnson42.com"></a>dev@matthewjohnson42.com<br><br>(651)-261-6353
+                        <br><br>5100 Wayzata Blvd #633W<br>Golden Valley, MN 55416<br></div>
+                    <div>Please feel free to reach out to me to start a conversation via email, text message, phone, or by
+                        engaging with me on GitHub or LinkedIn as linked below. Resume available on request.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer-new">
+        <div class="footer footer-component--outer component-wrapper">
+            <div class="footer-component--inner">
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/matthew-johnson-1708a6153/" target="_blank"
+                       class="color-black mdi mdi-linkedin-box" style="white-space:nowrap; padding-left: 10%; padding-right:10%;">LinkedIn</a>
+                    <a href="https://github.com/matthewjohnson42" target="_blank" class="color-black mdi mdi-github-circle"
+                       style="white-space:nowrap; padding-left: 10%; padding-right:10%;">GitHub</a>
+                    <a href="https://www.hackerrank.com/matthewjohnson42" target="_blank" class="color-black mdi mdi-web"
+                       style="white-space:nowrap; padding-left:10%;">HackerRank</a>
+                </div>
+                <div style="text-align: center;">
+                    <a href="./index.html#home" style="white-space: nowrap; padding-right: 1em">Home (top of page)</a>
+                    <a href="about.html" style="white-space: nowrap; padding-left: 1em">About</a>
+                </div>
+                <div style="text-align: center;">© 2020 Matthew David Johnson</div>
+            </div>
+            <br>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

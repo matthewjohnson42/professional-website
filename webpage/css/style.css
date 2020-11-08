@@ -1705,3 +1705,9 @@ a.tan {
 a.darkblue {
     color: #0000c3;
 }
+
+div.about-photo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
