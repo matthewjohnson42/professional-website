@@ -1,10 +1,12 @@
 # Scripts
 
+## configure nginx on debian/ubuntu-based host
+
+see `initalizeServer.sh`
+
+## cert addition or renewal
+
 Assumes that `initializeServer.sh` has been run on the system first.
-
-Following that, `newCert.sh` can be run to create a SSL/TLS cert that will allow for verified SSL/TLS communications.
-
-To update from github, run `updateSiteFromSource.sh`.
 
 To renew the cert:
 
@@ -13,3 +15,14 @@ To renew the cert:
 3) copy the DH random prime file from the previous certificate installation in `/etc/letsencrypt/live/`
 4) update the nginx configuration in `/etc/nginx/sites-available` to reference the new certificate installation
 5) reload nginx using `sudo nginx -s reload`, updating `run/nginx.pid` as appropriate
+
+## updating the remote host's content from GitHub
+
+see `updateSiteFromSource.sh`.
+
+## firewall configuration
+
+Performed by the initial host/webserver configuration in `initalizeServer.sh`
+
+see `ufwDenyOut.sh`
+see `ufwAllowOut.sh`
