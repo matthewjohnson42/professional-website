@@ -1,6 +1,6 @@
-# personal-website
+# professional-website
 
-My personal website as hosted on AWS with DNS registration by Google.
+My professional website as hosted on AWS with DNS registration by Google.
 
 The domain of the website is [matthewjohnson42.com](https://matthewjohnson42.com).
 
