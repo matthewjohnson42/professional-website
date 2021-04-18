@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  professional-website:
+    image: professional-website:0.0.1
+    container_name: professional-website
+    ports:
+      - "8088:80"
