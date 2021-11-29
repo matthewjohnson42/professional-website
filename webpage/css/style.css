@@ -1076,6 +1076,19 @@ button,
     min-height:800px;
 }
 
+.photo-component--research-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.research-wrapper {
+    min-height: 800px;
+}
+
 .ani-loading-spinner {
     display: inline-block;
     width: 50px;
