@@ -1,7 +1,7 @@
 # professional-website
 
-My professional website as hosted on AWS with DNS registration by Google.
+A professional website.
 
-The domain of the website is [matthewjohnson42.com](https://matthewjohnson42.com).
+The website is hosted at [matthewjohnson42.com](https://matthewjohnson42.com). The hosting is provided by AWS.
 
-Deployed to independent k8s cluster on AWS using the scripts from [matthewjohnson42/k8s-standalone](https://github.com/matthewjohnson42/k8s-standalone).
+Deploy scripts for the web server are in the repository [matthewjohnson42/k8s-standalone](https://github.com/matthewjohnson42/k8s-standalone).
